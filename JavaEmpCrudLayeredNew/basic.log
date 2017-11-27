@@ -1,0 +1,32 @@
+
+2017-10-24 14:30:36,675 FATAL [JavaEmpCrudLayeredNew] - Config file missing
+java.io.FileNotFoundException: Project1.properties (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.cg.empManage.util.ProjectProps.<init>(ProjectProps.java:30)
+	at com.cg.empManage.util.ProjectFactory.<init>(ProjectFactory.java:14)
+	at com.cg.empManage.daos.EmpDaoImpl.<init>(EmpDaoImpl.java:27)
+	at com.cg.empManage.services.EmpServicesImpl.<init>(EmpServicesImpl.java:14)
+	at com.cg.empManage.ui.HrUI.main(HrUI.java:24)
+2017-10-24 14:45:49,392 INFO [JavaEmpCrudLayeredNew] - Main menu choice : 1
+2017-10-24 14:45:49,633 ERROR [JavaEmpCrudLayeredNew] - Problem in getAllEmps()
+java.sql.SQLSyntaxErrorException: Table/View 'APP.EMP1' does not exist.
+	at org.apache.derby.client.am.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.ClientStatement.executeQuery(Unknown Source)
+	at com.cg.empManage.daos.EmpDaoImpl.getAllEmps(EmpDaoImpl.java:40)
+	at com.cg.empManage.services.EmpServicesImpl.getAllEmps(EmpServicesImpl.java:19)
+	at com.cg.empManage.ui.HrUI.main(HrUI.java:59)
+Caused by: ERROR 42X05: Table/View 'APP.EMP1' does not exist.
+	at org.apache.derby.client.am.ClientStatement.completeSqlca(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parsePrepareError(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.parsePRPSQLSTTreply(Unknown Source)
+	at org.apache.derby.client.net.NetStatementReply.readPrepareDescribeOutput(Unknown Source)
+	at org.apache.derby.client.net.StatementReply.readPrepareDescribeOutput(Unknown Source)
+	at org.apache.derby.client.net.NetStatement.readPrepareDescribeOutput_(Unknown Source)
+	at org.apache.derby.client.am.ClientStatement.readPrepareDescribeOutput(Unknown Source)
+	at org.apache.derby.client.am.ClientStatement.flowExecute(Unknown Source)
+	at org.apache.derby.client.am.ClientStatement.executeQueryX(Unknown Source)
+	... 4 more
